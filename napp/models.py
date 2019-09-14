@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from napp.choices import *
+from django.utils import timezone
 
 class Author(models.Model):
 	username = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -17,13 +18,14 @@ class Notes(models.Model):
 	department = models.CharField(max_length=100, choices=DEPARTMENT_CHOICE)
 	subject = models.CharField(max_length=100)
 	unit = models.IntegerField()
+	date_posted = models.DateTimeField(default=timezone.now)
 	file = models.FileField(upload_to="notes_folder/")
 
 	class Meta:
 		verbose_name_plural = "Notes"
 
 class Comment(models.Model):
-	notes = models.ForeignKey('Notes', on_delete=models.CASCADE, related_name='notes') 
+	notes = models.ForeignKey('Notes', on_delete=models.CASCADE, related_name='comment')
 	comment = models.TextField(max_length=500)
-	commented_by = models.ForeignKey('Author', on_delete=models.CASCADE, related_name='commented_by')
+	commented_by = models.ForeignKey('Author', on_delete=models.CASCADE, related_name='comment')
 	sentiment = models.CharField(max_length=20, choices=SENTIMENT_CHOICE)
