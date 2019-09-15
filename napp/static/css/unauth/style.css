@@ -327,37 +327,12 @@ h1.header-w3ls {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 0px 30px;
+  padding: 10px 30px;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 30px;
   border-bottom: 3px solid transparent;
 }
 
-@media only screen and (max-width: 320px) {
-  
-    
-    .topnav a {
-  float: right;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 9px;
-  text-decoration: none;
-  font-size: 25px;
-  border-bottom: 3px solid transparent;
-}
-    
-    #brandname {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 15px;
-      text-decoration: none;
-      font-size: 25px;
-      border-bottom: 3px solid transparent;
-  }
-}
 
 .topnav {
 
@@ -385,7 +360,7 @@ h1.header-w3ls {
 .topnav a.active {
   border-bottom: 3px solid red;
 }
-html, body {margin: 0; height: 100%; overflow: hidden}
+
 
 .mid-class {
 	display: -webkit-flex;
@@ -409,7 +384,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	-webkit-flex-basis: 40%;
 	box-sizing: border-box;
 	min-height: 50vh;
-	background: 
+	background:
 	box-sizing: border-box;
 }
 
@@ -1126,15 +1101,15 @@ h1 {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #adb2bd; 
+   color: #adb2bd;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #adb2bd;  
+   color: #adb2bd;
 }
 
-:-ms-input-placeholder {  
-   color: #adb2bd;  
+:-ms-input-placeholder {
+   color: #adb2bd;
 }
 /*--responsive--*/
 @media(max-width:1440px){
@@ -1305,7 +1280,7 @@ h1 {
 	}
 }
 @media(max-width:375px){
-	
+
 }
 @media(max-width:320px){
 	h1 {

@@ -9,11 +9,13 @@ body {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 0px 30px;
+  padding: 10px 30px;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 30px;
   border-bottom: 3px solid transparent;
 }
+
+
 .topnav {
 
   background-color: #333333;
@@ -112,7 +114,7 @@ ol {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
-	margin-bottom:30px;	 
+	margin-bottom:30px;
 }
 .w3ls-welcome_sec_about-head .span1 {
     width: 34px;
@@ -231,7 +233,7 @@ ol {
     text-align: center;
 }
 
-  
+
 /*-- //events-top --*/
 .events-top {
     padding-bottom: 6em;
@@ -258,14 +260,14 @@ ul.portfolio_agile_info_w3ls li {
     float: left;
     width: 33%;
     background: #bfdb39;
-    text-align: center; 
+    text-align: center;
     border: 2px solid rgba(72,98,196,0.77);
 	-webkit-transition: .5s all;
 	-moz-transition: .5s all;
 	transition: .5s all;
 	-o-transition: .5s all;
 	-ms-transition: .5s all;
-} 
+}
 .team-right {
      float: right;
     width: 67%;
@@ -273,24 +275,24 @@ ul.portfolio_agile_info_w3ls li {
     -webkit-box-shadow: 1px 2px 6px 0px rgba(245,63,123,0.77);
     -moz-box-shadow: 1px 2px 6px 0px rgba(245,63,123,0.77);
     box-shadow: 1px 2px 6px 0px rgba(245,63,123,0.77);
-	
+
 }
 .team-right h4 {
     font-size: 1.5em;
-    color: #333; 
+    color: #333;
 }
 .team-right p {
     margin: 1em 0;
 }
 .team-w3lsgrids:hover .team-left {
     background: none;
-} 
+}
 .team-info.team-row2 {
     margin-top: 3.5em;
 }
 
 
-	
+
 	/*-- /responsive design --*/
 @media(max-width:1440px){
 }
