@@ -4,12 +4,15 @@ from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
 from django.urls import reverse
 
-from napp.models import Author
+from napp.models import Notes, Author
+from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
 	if request.user.is_authenticated:
-		return render(request, 'index.html')
+		last_five = Notes.objects.all()[:5]
+		last_five_in_ascending_order = reversed(last_five)
+		return render(request, 'index.html', {"notes": last_five_in_ascending_order})
 	return render(request, 'home.html')
 
 def about(request):
@@ -20,6 +23,7 @@ def contact(request):
 
 def logout_request(request):
     logout(request)
+    messages.add_message(request, messages.INFO, 'Logged out')
     return redirect('index')
 
 def login_user(request):
@@ -36,6 +40,10 @@ def login_user(request):
 	else:
 		return render(request, 'index.html')
 
-def signup(request):
+def search(request):
 	if request.method == "POST":
-		fullname = request.POST.get('')
+		key = request.POST.get('searchVal')
+		data = Notes.objects.filter(name__icontains=key)
+		return render(request, 'search.html', {"data": data, "key": key})
+	else:
+		return HttpResponseRedirect(reverse('index'))
