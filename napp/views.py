@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+
 
 from napp.models import Notes, Author
 from django.contrib.auth.models import User
@@ -16,11 +18,12 @@ def index(request):
 	return render(request, 'home.html')
 
 def about(request):
-	return render(request, 'home.html')
+	return render(request, 'about.html')
 
 def contact(request):
 	return render(request, 'contact.html')
 
+@login_required(login_url='/admin/')
 def logout_request(request):
     logout(request)
     messages.add_message(request, messages.INFO, 'Logged out')
@@ -40,6 +43,7 @@ def login_user(request):
 	else:
 		return render(request, 'index.html')
 
+@login_required(login_url='/admin/')
 def search(request):
 	if request.method == "POST":
 		key = request.POST.get('searchVal')

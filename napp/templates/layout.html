@@ -11,12 +11,16 @@
   {% block title %} {% endblock %}
 </head>
 <body>
-
+  <div class="fixed-action-btn">
+  <a target="_blank" href="/admin" class="btn-floating btn-large blue">
+    <i class="large material-icons">https</i>
+  </a>
+  </div>
   <nav class="grey darken-3" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo">NOTAS</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
         {% if user.is_authenticated %}
 
         <li><a class="tooltipped" data-position="bottom" data-tooltip="Logout" href="{% url 'logout' %}"><i class="material-icons">exit_to_app</i></a></li>
@@ -26,8 +30,8 @@
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#"><i class="material-icons">contacts</i>Contact</a></li>
-        <li><a href="#"><i class="material-icons">info</i>About</a></li>
+        <li><a href="{% url 'contact' %}"><i class="material-icons">contacts</i>Contact</a></li>
+        <li><a href="{% url 'about' %}"><i class="material-icons">info</i>About</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'logout' %}"><i class="material-icons">exit_to_app</i>Logout</a></li>
         {% else %}

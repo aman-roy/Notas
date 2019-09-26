@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     url(r"^logout/$", views.logout_request, name="logout"),
     url(r"^login/$", views.login_user, name="login"),
-    path('search/', views.search),
+    path('search/', views.search, name="search"),
+    path('contact/', views.contact, name="contact"),
+    path('about/', views.about, name="about"),
 ]
