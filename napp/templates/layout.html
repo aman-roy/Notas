@@ -11,6 +11,7 @@
   {% block title %} {% endblock %}
 </head>
 <body>
+
   <nav class="grey darken-3" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NOTAS</a>
       <ul class="right hide-on-med-and-down">
@@ -50,6 +51,11 @@
   <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
   <script src="{% static 'js/materialize.js' %}"></script>
   <script src="{% static 'js/init.js' %}"></script>
+  <script type="text/javascript">
+  {% for message in messages %}
+    M.toast({html: '{{ message }}'})
+  {% endfor %}
+  </script>
   {% block customjs %}{% endblock %}
   </body>
 </html>

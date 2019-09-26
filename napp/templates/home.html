@@ -52,9 +52,29 @@
           <div class="row">
           <div class="col s12">
             <div class="input-field">
-              <input id="username_inline" type="text" class="validate">
+              <input id="fullname_inline" type="text" class="validate" name="fullname">
+              <label for="fullname_inline">Full name</label>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="input-field">
+              <input id="username_inline" type="text" class="validate" name="username">
               <label for="username_inline">Username</label>
             </div>
+          </div>
+          <div class="col s12">
+            <div class="input-field">
+              <input id="email_inline" type="email" class="validate">
+              <label for="email_inline">Email</label>
+            </div>
+          </div>
+          <div class="input-field col s12">
+            <select>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Student</option>
+              <option value="2">Teacher</option>
+            </select>
+            <label>Designation</label>
           </div>
           <div class="col s12">
             <div class="input-field">
@@ -69,15 +89,14 @@
             </div>
           </div>
           <div class="col s12">
-            <div class="input-field">
-              <input id="email_inline" type="email" class="validate">
-              <label for="email_inline">Email</label>
-            </div>
-          </div>
-          <div class="col s12">
-            <div class="input-field">
-              <input id="name_inline" type="email" class="validate">
-              <label for="name_inline">Full name</label>
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Upload profile picture</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
             </div>
           </div>
           <div class="col s12">
@@ -124,4 +143,10 @@
     $('.modal').modal();
   });
   </script> 
+
+  <script>
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+  </script>
   {% endblock %}

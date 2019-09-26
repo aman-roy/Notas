@@ -35,3 +35,7 @@ def login_user(request):
 		return HttpResponseRedirect(reverse('index'))
 	else:
 		return render(request, 'index.html')
+
+def signup(request):
+	if request.method == "POST":
+		fullname = request.POST.get('')
