@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+   <style type="text/css">
+    body {
+      background-image: url("{% static 'images/back.svg' %}");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 1000% 1000%;
+    }
+  </style>
+{% endblock %}
+
+
+{% block body %}
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 class="center">Log In</h4>
+      <form class="center" method="post" action="#">
+        <div class="container">
+          <div class="row">
+          <div class="col s12">
+            <div class="input-field">
+              <input id="name_inline" type="text" class="validate">
+              <label for="name_inline">Username</label>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="input-field">
+              <input id="details_inline" type="text" class="validate">
+              <label for="details_inline">Password</label>
+            </div>
+          </div>
+          <div class="col s12">
+             <button class="btn waves-effect waves-light" type="submit" name="action">Log in
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4 class="center">Sign up</h4>
+      <form class="center" method="post" action="#">
+        <div class="container">
+          <div class="row">
+          <div class="col s12">
+            <div class="input-field">
+              <input id="username_inline" type="text" class="validate">
+              <label for="username_inline">Username</label>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="input-field">
+              <input id="password_inline" type="password" class="validate">
+              <label for="password_inline">Password</label>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="input-field">
+              <input id="rpass_inline" type="password" class="validate">
+              <label for="rpass_inline">Repeat password</label>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="input-field">
+              <input id="email_inline" type="email" class="validate">
+              <label for="email_inline">Email</label>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="input-field">
+              <input id="name_inline" type="email" class="validate">
+              <label for="name_inline">Full name</label>
+            </div>
+          </div>
+          <div class="col s12">
+             <button class="btn waves-effect waves-light" type="submit" name="action">Sign up
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="section no-pad-bot" id="index-banner" style="padding-top: 8em;">
+    <div class="container">
+      <h1 class="center white-text">NOTAS</h1>
+      <h2 class="center white-text">A platform where notes sharing is </h2>
+      <h3 id="prop" class="center white-text"></h3>
+    </div>
+  </div>
+
+  {% endblock %}
+
+
+  {% block customjs %}
+  <script src="{% static 'js/typeit.min.js' %}"></script>
+  <script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+  </script>
+  <script>
+    new TypeIt('#prop', {
+      strings: ["Easy", "Manageable", "Organized", "Fun", "Hassle-free", "Multidevice-Sync", "Free"],
+      speed: 80,
+      breakLines: false,
+      loop: true,
+      waitUntilVisible: true
+    }).go();
+  </script>
+  <script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+  </script> 
+  {% endblock %}

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>NOTAS</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  {% block title %} {% endblock %}
+</head>
+<body>
+  <nav class="grey darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NOTAS</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        {% if user.is_authenticated %}
+        <li><a class="tooltipped modal-trigger" data-position="bottom" data-tooltip="Upload Notes" href="#modal1"><i class="material-icons">file_upload</i></a></li>
+        <li><a class="tooltipped" data-position="bottom" data-tooltip="My Profile" href="#"><i class="material-icons">account_circle</i></a></li>
+
+        <li><a class="tooltipped" data-position="bottom" data-tooltip="Logout" href="{% url 'logout' %}"><i class="material-icons">exit_to_app</i></a></li>
+        {% else %}
+        <li><a class="modal-trigger" href="#modal1">Login</a></li>
+        <li><a class="modal-trigger" href="#modal2">Signup</a></li>
+        {% endif %}
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#"><i class="material-icons">contacts</i>Contact</a></li>
+        <li><a href="#"><i class="material-icons">info</i>About</a></li>
+        {% if user.is_authenticated %}
+        <li><a class="modal-trigger" href="#modal1"><i class="material-icons">file_upload</i>Upload File</a></li>
+        <li><a href="#"><i class="material-icons">account_circle</i>My Profile</a></li>
+        <li><a href="{% url 'logout' %}"><i class="material-icons">exit_to_app</i>Logout</a></li>
+        {% else %}
+        <li><a class="modal-trigger" href="#modal1"><i class="material-icons">input</i>Login</a></li>
+        <li><a class="modal-trigger" href="#modal2"><i class="material-icons">person_add</i>Signup</a></li>
+        {% endif %}
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  {% block body %}{% endblock %}
+
+
+  <!--  Scripts-->
+  <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+  {% block customjs %}{% endblock %}
+  </body>
+</html>
