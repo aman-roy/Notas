@@ -17,18 +17,19 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4 class="center">Log In</h4>
-      <form class="center" method="post" action="#">
+      <form class="center" method="post" action="login/">
+        {% csrf_token %}
         <div class="container">
           <div class="row">
           <div class="col s12">
             <div class="input-field">
-              <input id="name_inline" type="text" class="validate">
+              <input id="name_inline" type="text" class="validate" name="username">
               <label for="name_inline">Username</label>
             </div>
           </div>
           <div class="col s12">
             <div class="input-field">
-              <input id="details_inline" type="text" class="validate">
+              <input id="details_inline" type="password" class="validate" name="password">
               <label for="details_inline">Password</label>
             </div>
           </div>
@@ -46,7 +47,7 @@
   <div id="modal2" class="modal">
     <div class="modal-content">
       <h4 class="center">Sign up</h4>
-      <form class="center" method="post" action="#">
+      <form class="center" method="post" action="signup/">
         <div class="container">
           <div class="row">
           <div class="col s12">
