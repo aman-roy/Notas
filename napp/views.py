@@ -12,9 +12,8 @@ from django.contrib.auth.models import User
 # Create your views here.
 def index(request):
 	if request.user.is_authenticated:
-		last_five = Notes.objects.all()[:5]
-		last_five_in_ascending_order = reversed(last_five)
-		return render(request, 'index.html', {"notes": last_five_in_ascending_order})
+		last_five = Notes.objects.all().order_by('-id')[:5]
+		return render(request, 'index.html', {"notes": last_five})
 	return render(request, 'home.html')
 
 def about(request):
